@@ -1,16 +1,18 @@
 package Classes;
 
+
+import java.util.ArrayList;
+
 public class SecretarioOnibus implements SecretarioPoggers{
+
+    private ArrayList<Onibus> todosOsOnibus = new ArrayList<>();
+    private ArrayList<Motorista> todosOsMotoristas = new ArrayList<>();
+    private static int quantidadeTotalDeOnibus = 0;
 
     void listarOnibusDisponiveis(){
         // Mostrar onibus disponiveis
-            // Pode ser carros
+        // Pode ser carros
     }
-
-    void listarMotorista(){
-        // Mostrar o array de motoristas
-    }
-
 
     public void verificarDadosMotorista() {
         // Printar os dados do motorista
@@ -20,24 +22,39 @@ public class SecretarioOnibus implements SecretarioPoggers{
         // Tira um motorista do array;
     }
 
-    @Override
-    public void adicionarIten() {
-        // Adiciona um onibus
-    }
 
+    public void alocarOnibus(ArrayList<Onibus> onibus) {
+        this.todosOsOnibus = onibus;
 
-    @Override
-    public void alocar() {
-        // AlocaMotorista em um array
+        for (Onibus onibusCriando : this.todosOsOnibus){
+            onibusCriando.setId(12);
+            onibusCriando.setCapacidade(30);
+            onibusCriando.setPlaca("AIDS-34");
+            onibusCriando.setEmManutencao(false);
+        }
+        quantidadeTotalDeOnibus++;
     }
 
     @Override
     public void verificarDados() {
-        // Printar os dados do onibus ( disponivel ou não )
+        System.out.println("Dados dos ônibus");
+        for (Onibus o : todosOsOnibus) {
+            System.out.println("ID: " + o.getId());
+            System.out.println("Placa: " + o.getPlaca());
+            System.out.println("Capacidade: " + o.getCapacidade());
+            System.out.println("Em Manutenção: " + (o.isEmManutencao() ? "Disponivel" : "Em manutenção"));
+        }
+        System.out.println("Total de ônibus: " + todosOsOnibus.size());
     }
 
     @Override
     public void listarIten() {
-        // Lista todos os onibus
+        System.out.println("Dados dos ônibus");
+        for (Onibus o : todosOsOnibus) {
+            System.out.println("ID: " + o.getId());
+            System.out.println("Placa: " + o.getPlaca());
+            System.out.println("Capacidade: " + o.getCapacidade());
+            System.out.println("Em Manutenção: " + (o.isEmManutencao() ? "Disponivel" : "Em manutenção"));
+        }
     }
 }

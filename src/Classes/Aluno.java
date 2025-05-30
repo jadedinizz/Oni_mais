@@ -6,11 +6,11 @@ public class Aluno extends Pessoa {
     protected int telefone;
     protected String end;
 
-    public Aluno(String CPF, String nome, int idade, String instituicao, String email, int telefone, String end) {
-        super(CPF, nome, idade);
+    public Aluno(String CPF, String nome, int idade, String email, String telefone, String endereco, String instituicao, String email1, int telefone1, String end) {
+        super(CPF, nome, idade, email, telefone, endereco);
         this.instituicao = instituicao;
-        this.email = email;
-        this.telefone = telefone;
+        this.email = email1;
+        this.telefone = telefone1;
         this.end = end;
     }
 }
